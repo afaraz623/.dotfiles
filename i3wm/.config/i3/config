@@ -181,19 +181,19 @@ bindsym $mod+r mode "resize"
 
 # window colors complimenting materia dark theme
 
-set $sky_blue		    #57d8ff
+set $sky_blue		#57d8ff
 set $gun_matel_grey	#363636
-set $light_grey		  #969696
-set $dark_grey		  #282828
-set $white		      #ffffff
-set $red		        #ff0000
-set $black		      #000000
+set $light_grey		#969696
+set $dark_grey		#282828
+set $white		#ffffff
+set $red		#ff0000
+set $black		#000000
 
-# class                 border		      bground		      text		  indicator	
-client.focused          $sky_blue	      $sky_blue 	    $white 		$sky_blue   	
-client.unfocused	      $gun_matel_grey	$gun_matel_grey	$white		$gun_matel_grey
-client.focused_inactive	$gun_matel_grey	$gun_matel_grey	$white		$gun_matel_grey
-client.urgent		        $red		        $red		        $white		$red
+# class                 border          bground	        text   indicator	
+client.focused          $sky_blue       $sky_blue 	$white $sky_blue   	
+client.unfocused	$gun_matel_grey	$gun_matel_grey	$white $gun_matel_grey
+client.focused_inactive	$gun_matel_grey	$gun_matel_grey	$white $gun_matel_grey
+client.urgent		$red		$red		$white $red
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -203,10 +203,10 @@ bar {
     background $gun_matel_grey
     separator  $white
 
-    # class		          border		      bground		      text
-    focused_workspace	  $sky_blue	      $sky_blue	      $white
-    inactive_workspace  $gun_matel_grey	$gun_matel_grey	$light_grey
-    urgent_workspace	  $red		        $red		        $white
+    # class	       border	       bground	       text
+    focused_workspace  $sky_blue       $sky_blue       $white
+    inactive_workspace $gun_matel_grey $gun_matel_grey $light_grey
+    urgent_workspace   $red	       $red	       $white
     }
     status_command i3status -c /home/faraz/.config/i3status/i3status.conf
 }
@@ -216,24 +216,25 @@ exec --no-startup-id xdg-user-dirs-update
 # autostart applications
 exec_always picom
 exec_always nitrogen --restore
-exec_always /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec_always /usr/libexec/polkit-gnome-authentication-agent-1
+exec_always nm-applet
 
 # personal flair
-#gaps outer 15
-#gaps inner 10
+gaps outer 15
+gaps inner 10
 for_window [class="^.*"] border pixel 2
 
 # assign programs to workspaces
 assign [class="kitty"] $ws1
 assign [class="Google-chrome"] $ws2
 assign [class="Code"] $ws3
-assign [class="Org.gnome.Nautilus"] $ws4
+assign [class="org.gnome.Nautilus"] $ws4
 assign [class="Virt-manager"] $ws5
 
 for_window [class="kitty"] focus
 for_window [class="Google-chrome"] focus
 for_window [class="Code"] focus
-for_window [class="Org.gnome.Nautilus"] focus
+for_window [class="org.gnome.Nautilus"] focus
 for_window [class="Virt-manager"] focus
 
 # custom keybinds
