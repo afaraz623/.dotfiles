@@ -246,3 +246,9 @@ bindsym $mod+Shift+x exec i3lock
 bindsym $mod+c exec google-chrome
 bindsym $mod+x exec code
 bindsym $mod+m exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+bindsym $mod+b [class="btop"] scratchpad show; move position center
+
+# Scratchpad setup
+for_window [class="btop"] move scratchpad
+exec_always --no-startup-id pgrep -f '^kitty --class btop,btop -e btop' || kitty --class btop,btop -e btop
+
