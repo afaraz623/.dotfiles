@@ -164,7 +164,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # window colors complimenting materia dark theme
-
 set $sky_blue		#57d8ff
 set $gun_matel_grey	#363636
 set $light_grey		#969696
@@ -246,4 +245,9 @@ bindsym $mod+Shift+x exec neovide
 # scratchpad setup
 for_window [class="btop"] move scratchpad
 exec_always --no-startup-id pgrep -f '^kitty --class btop,btop -e btop' || kitty --class btop,btop -e btop
+
+# screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
 
