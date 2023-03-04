@@ -218,6 +218,7 @@ assign [class="Virt-manager"] $ws5
 assign [class="Anydesk"] $ws6
 assign [class="KiCad"] $ws7
 assign [class="Inkscape"] $ws8
+assign [class="Gimp-2.10"] $ws8
 assign [class="discord"] $ws9
 
 for_window [class="kitty"] focus
